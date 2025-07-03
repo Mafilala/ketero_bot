@@ -1,6 +1,5 @@
-
 [build]
-  command = "tsc && mkdir -p netlify/functions && cp -r dist/functions/* netlify/functions"
+  command = "tsc && mkdir -p netlify/functions && cp dist/functions/* netlify/functions"
   functions = "netlify/functions"
 
 [[redirects]]

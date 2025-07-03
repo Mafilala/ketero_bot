@@ -1,4 +1,3 @@
-import { User } from "../types/types";
 import 'dotenv/config';
 import axios from 'axios'
 async function getUserRole(telegramId: number): Promise<'admin' | 'shopkeeper' | ''> {

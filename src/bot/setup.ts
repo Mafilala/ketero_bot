@@ -5,8 +5,12 @@ import { registerStartCommand } from '../commands/start';
 import { registerAdminToolCommand } from '../commands/admin_tool';
 
 export const createBot = (): Telegraf => {
-  const bot = new Telegraf(process.env.BOT_TOKEN);
- 
+  const token = process.env.BOT_TOKEN;
+  if (!token) {
+    throw new Error('BOT_TOKEN is not set in environment variables');
+  }
+
+const bot = new Telegraf(token); 
   registerStartCommand(bot)
   registerOrdersCommand(bot)
   registerTakeMeasureCommand(bot)

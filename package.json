@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon --watch src --ext ts,js src/index.ts"
+    "dev": "nodemon --watch src --ext ts,js src/index.ts",
+    "build": "tsc && mkdir -p netlify/functions && cp -r dist/functions/* netlify/functions"
   },
   "keywords": [],
   "author": "",
@@ -25,5 +25,18 @@
     "nodemon": "^3.1.10",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3"
-  }
+  },
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "CommonJS",
+    "rootDir": ".",
+    "outDir": "dist",
+    "esModuleInterop": true,
+    "strict": true,
+    "skipLibCheck": true
+  },
+  "include": [
+    "src",
+    "functions"
+  ]
 }

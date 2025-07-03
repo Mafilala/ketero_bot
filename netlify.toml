@@ -1,0 +1,10 @@
+
+[build]
+  command = "tsc && mkdir -p netlify/functions && cp -r dist/functions/* netlify/functions"
+  functions = "netlify/functions"
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+

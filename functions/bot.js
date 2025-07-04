@@ -1,11 +1,10 @@
-
 const { Telegraf } = require('telegraf');
 require('dotenv').config();
 
 const { registerStartCommand } = require('../src/commands/start');
 const { registerOrdersCommand } = require('../src/commands/orders');
-const { registerTakeMeasureCommand } = require('../src/commands/takeMeasure');
-const { registerAdminToolCommand } = require('../src/commands/adminTool');
+const { registerTakeMeasureCommand } = require('../src/commands/take_measure');
+const { registerAdminToolCommand } = require('../src/commands/admin_tool');
 
 const bot = new Telegraf(process.env.BOT_TOKEN);
 registerStartCommand(bot);

@@ -42,10 +42,6 @@ next-env.d.ts
 
 # Build outputs
 dist/
-netlify/functions/
-functions/*.js
-src/**/*.js
-
 
 # Local Netlify folder
 .netlify

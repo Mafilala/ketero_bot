@@ -46,3 +46,6 @@ netlify/functions/
 functions/*.js
 src/**/*.js
 
+
+# Local Netlify folder
+.netlify

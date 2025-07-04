@@ -1,4 +1,4 @@
-import getUserRole from '../lib/getUserRole.js'
+import { getUserRole } from '../lib/getUserRole.js';
 
  export const registerStartCommand = (bot) =>  {
     bot.start(async (ctx) => {

@@ -1,4 +1,3 @@
-import { Telegraf    } from 'telegraf';
 import 'dotenv/config';
 
 export const registerAdminToolCommand = (

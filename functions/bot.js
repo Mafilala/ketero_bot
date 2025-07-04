@@ -1,10 +1,12 @@
-const { Telegraf } = require('telegraf');
-require('dotenv').config();
+import { Telegraf } from 'telegraf';
+import dotenv from 'dotenv';
 
-const { registerStartCommand } = require('../src/commands/start');
-const { registerOrdersCommand } = require('../src/commands/orders');
-const { registerTakeMeasureCommand } = require('../src/commands/take_measure');
-const { registerAdminToolCommand } = require('../src/commands/admin_tool');
+import { registerStartCommand } from '../src/commands/start.js';
+import { registerOrdersCommand } from   '../src/commands/orders.js';
+import { registerTakeMeasureCommand } from '../src/commands/take_measure.js';
+import { registerAdminToolCommand } from '../src/commands/admin_tool.js';
+
+dotenv.config();
 
 const bot = new Telegraf(process.env.BOT_TOKEN);
 registerStartCommand(bot);
@@ -12,7 +14,7 @@ registerOrdersCommand(bot);
 registerTakeMeasureCommand(bot);
 registerAdminToolCommand(bot);
 
-exports.handler = async (event, context) => {
+export async function handler(event, context) {
   if (event.httpMethod !== 'POST') {
     return {
       statusCode: 405,
@@ -34,4 +36,5 @@ exports.handler = async (event, context) => {
       body: 'Failed to process update',
     };
   }
-};
+}
+

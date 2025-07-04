@@ -2,6 +2,7 @@
   "name": "ketero_bot",
   "version": "1.0.0",
   "main": "functions/bot.js",
+  "type": "module",
   "scripts": {
     "start": "netlify dev"
   },

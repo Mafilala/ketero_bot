@@ -1,7 +1,7 @@
-const getUserRole = require('../lib/getUserRole');
+import {getUserRole} from '../lib/getUserRole.js'
 
-function registerStartCommand(bot) {
-  bot.start(async (ctx) => {
+ export const registerStartCommand = (bot) =>  {
+    bot.start(async (ctx) => {
     const telegramId = ctx.from?.id;
     if (!telegramId) return;
 
@@ -27,5 +27,4 @@ function registerStartCommand(bot) {
   });
 }
 
-module.exports = { registerStartCommand };
 
